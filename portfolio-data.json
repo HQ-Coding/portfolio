@@ -1,0 +1,672 @@
+{
+  "schemaVersion": 1,
+  "profile": {
+    "siteName": "HQ FRONTEND",
+    "fullName": "Hadi Qasemian",
+    "heroGreeting": "HI I'M 👋",
+    "heroTitle": "FRONTEND DEVELOPER",
+    "aboutText": "I’m a curious and creative developer with a strong interest in building clean, user-focused digital experiences. With a background in both engineering and design, I enjoy combining technical skills with visual thinking to create thoughtful, responsive interfaces. I'm constantly learning and evolving—whether that’s exploring new frontend frameworks, improving my design process, or diving deeper into AI. I believe in growing through hands-on work, collaboration, and always staying open to new ideas.",
+    "email": "Qasemian.Hadi@gmail.com",
+    "cvUrl": "https://drive.usercontent.google.com/u/0/uc?id=1kfbih_v67vRxCLfL5E9ykv1zXRKL6J-V&export=download",
+    "social": {
+      "github": "https://github.com/HQ-Coding",
+      "linkedin": null
+    },
+    "experienceSummary": [
+      {
+        "title": "Frontend Developer",
+        "duration": "1+ years",
+        "order": 1
+      },
+      {
+        "title": "Programming",
+        "duration": "2+ years",
+        "order": 2
+      },
+      {
+        "title": "UI Design",
+        "duration": "1+ years",
+        "order": 3
+      },
+      {
+        "title": "SEO",
+        "duration": "1+ years",
+        "order": 4
+      },
+      {
+        "title": "Canva Pro and Designer",
+        "duration": null,
+        "order": 5
+      }
+    ],
+    "education": [
+      {
+        "degree": "B.Sc Biomedical Engineering",
+        "order": 1
+      },
+      {
+        "degree": "M.Sc Biomedical Engineering",
+        "order": 2
+      }
+    ],
+    "skills": [
+      {
+        "name": "HTML",
+        "level": "Expert",
+        "percent": 80,
+        "order": 1
+      },
+      {
+        "name": "CSS",
+        "level": "Expert",
+        "percent": 80,
+        "order": 2
+      },
+      {
+        "name": "JavaScript",
+        "level": "Advanced",
+        "percent": 80,
+        "order": 3
+      },
+      {
+        "name": "Tailwind CSS",
+        "level": "Advanced",
+        "percent": 80,
+        "order": 4
+      },
+      {
+        "name": "Bootstrap",
+        "level": "Advanced",
+        "percent": 60,
+        "order": 5
+      },
+      {
+        "name": "SASS",
+        "level": "Intermediate",
+        "percent": 60,
+        "order": 6
+      },
+      {
+        "name": "React",
+        "level": "Intermediate",
+        "percent": 60,
+        "order": 7
+      },
+      {
+        "name": "Git",
+        "level": "Advanced",
+        "percent": 70,
+        "order": 8
+      }
+    ],
+    "softSkills": [
+      "Teamwork",
+      "Communication",
+      "Creative Problem Solving",
+      "Time Management",
+      "Adaptability",
+      "Attention to Detail"
+    ]
+  },
+  "certificates": [
+    {
+      "slug": "responsive-web-design",
+      "name": "Responsive Web Design",
+      "issuer": "freeCodeCamp",
+      "link": "https://www.freecodecamp.org/certification/hadi-qasemian/responsive-web-design",
+      "iconPath": "M129.4 160.2C139.8 149.6 145.4 143.1 145.4 138.3C145.4 135.5 143.5 132.8 141.6 130.9C139.2 129.1 136.2 128.1 133.2 128.1C124.7 128.1 112.3 136.9 97.4 153.8C55.9 201.1 34.7 246.9 35.6 314.4C36.5 381.9 53 431.3 89.6 476.2C108.4 499.8 122.8 512 133.1 512C136.3 511.7 139.2 510.4 141.5 508.2C143.4 505.4 145.3 502.6 145.3 499.8C145.3 494.2 141.4 487.6 132.1 479.2C87.6 436.9 64.8 382.2 64.6 314.2C64.4 252.8 86.2 201.8 129.4 160.2zM271.6 484.1C272.2 484.5 272.5 484.7 272.5 484.7L271.6 484.1zM365.4 484.7L365.6 484.6C365.4 484.7 365.3 484.8 365.4 484.7zM368.5 326.5C352.3 322.3 418.9 243.6 300.4 149.3C300.4 149.3 315.9 198.7 237.6 308.9C163.3 413.3 261.1 477.6 271.6 484.1C264.9 479.8 224.2 448.4 281.2 355.5C292.2 337.2 306.7 320.6 324.7 283.3C324.7 283.3 340.6 305.7 332.3 354.4C319.8 428 386.1 406.9 387.1 407.9C409.9 434.7 369.4 481.4 365.5 484.5C371 480.8 483.2 406.5 398.5 296.4C392.5 302.4 384.7 330.6 368.5 326.5zM543 153.7C528.1 136.8 515.6 128 507.1 128C504.1 128.1 501.2 129.1 498.7 130.8C496.8 132.7 494.9 135.5 494.9 138.2C494.9 143 500.5 149.5 510.9 160.1C554.1 201.7 575.9 252.7 575.7 314.2C575.5 382.2 552.7 436.8 508.2 479.2C498.9 487.6 495 494.1 495 499.8C495 502.5 496.9 505.4 498.8 508.2C501.1 510.4 504 511.8 507.2 512C517.5 512 531.9 499.9 550.7 476.2C587.3 431.3 603.8 381.8 604.8 314.3C605.8 246.8 584.5 201 543 153.7z",
+      "color": "#01133f",
+      "order": 1,
+      "published": true
+    },
+    {
+      "slug": "javascript-algorithms-and-data-structures",
+      "name": "JavaScript Algorithms and Data Structures",
+      "issuer": "freeCodeCamp",
+      "link": "https://www.freecodecamp.org/certification/hadi-qasemian/javascript-algorithms-and-data-structures-v8",
+      "iconPath": "M129.4 160.2C139.8 149.6 145.4 143.1 145.4 138.3C145.4 135.5 143.5 132.8 141.6 130.9C139.2 129.1 136.2 128.1 133.2 128.1C124.7 128.1 112.3 136.9 97.4 153.8C55.9 201.1 34.7 246.9 35.6 314.4C36.5 381.9 53 431.3 89.6 476.2C108.4 499.8 122.8 512 133.1 512C136.3 511.7 139.2 510.4 141.5 508.2C143.4 505.4 145.3 502.6 145.3 499.8C145.3 494.2 141.4 487.6 132.1 479.2C87.6 436.9 64.8 382.2 64.6 314.2C64.4 252.8 86.2 201.8 129.4 160.2zM271.6 484.1C272.2 484.5 272.5 484.7 272.5 484.7L271.6 484.1zM365.4 484.7L365.6 484.6C365.4 484.7 365.3 484.8 365.4 484.7zM368.5 326.5C352.3 322.3 418.9 243.6 300.4 149.3C300.4 149.3 315.9 198.7 237.6 308.9C163.3 413.3 261.1 477.6 271.6 484.1C264.9 479.8 224.2 448.4 281.2 355.5C292.2 337.2 306.7 320.6 324.7 283.3C324.7 283.3 340.6 305.7 332.3 354.4C319.8 428 386.1 406.9 387.1 407.9C409.9 434.7 369.4 481.4 365.5 484.5C371 480.8 483.2 406.5 398.5 296.4C392.5 302.4 384.7 330.6 368.5 326.5zM543 153.7C528.1 136.8 515.6 128 507.1 128C504.1 128.1 501.2 129.1 498.7 130.8C496.8 132.7 494.9 135.5 494.9 138.2C494.9 143 500.5 149.5 510.9 160.1C554.1 201.7 575.9 252.7 575.7 314.2C575.5 382.2 552.7 436.8 508.2 479.2C498.9 487.6 495 494.1 495 499.8C495 502.5 496.9 505.4 498.8 508.2C501.1 510.4 504 511.8 507.2 512C517.5 512 531.9 499.9 550.7 476.2C587.3 431.3 603.8 381.8 604.8 314.3C605.8 246.8 584.5 201 543 153.7z",
+      "color": "#01133f",
+      "order": 2,
+      "published": true
+    },
+    {
+      "slug": "git-github",
+      "name": "Git & Github",
+      "issuer": "Le Wagon",
+      "link": "https://app.lewagon.school/certificates/lgfhm7xifh",
+      "iconPath": "M480 64C568.4 64 640 135.6 640 224L640 448C640 483.3 611.3 512 576 512L570.4 512C557.2 549.3 521.8 576 480 576C438.2 576 402.7 549.3 389.6 512L250.5 512C237.3 549.3 201.8 576 160.1 576C118.4 576 82.9 549.3 69.7 512L64 512C28.7 512 0 483.3 0 448L0 160C0 107 43 64 96 64L480 64zM160 432C133.5 432 112 453.5 112 480C112 506.5 133.5 528 160 528C186.5 528 208 506.5 208 480C208 453.5 186.5 432 160 432zM480 432C453.5 432 432 453.5 432 480C432 506.5 453.5 528 480 528C506.5 528 528 506.5 528 480C528 453.5 506.5 432 480 432zM480 128C462.3 128 448 142.3 448 160L448 352C448 369.7 462.3 384 480 384L544 384C561.7 384 576 369.7 576 352L576 224C576 171 533 128 480 128zM248 288L352 288C369.7 288 384 273.7 384 256L384 160C384 142.3 369.7 128 352 128L248 128L248 288zM96 128C78.3 128 64 142.3 64 160L64 256C64 273.7 78.3 288 96 288L200 288L200 128L96 128z",
+      "color": "#ff0000",
+      "order": 3,
+      "published": true
+    },
+    {
+      "slug": "python",
+      "name": "Python",
+      "issuer": "Kaggle",
+      "link": "https://www.kaggle.com/learn/certification/hadiqasemian/python",
+      "iconPath": "M464.2 565.5L318.4 384.3L458.2 249C460.8 246.3 459.9 238.5 452.9 238.5L383.7 238.5C380.2 238.5 376.7 240.3 373.2 243.8L240.9 377.5L240.9 71.5C240.9 66.5 238.4 64 233.4 64L181.5 64C176.5 64 174 66.5 174 71.5L174 568.5C174 573.5 176.5 576 181.5 576L233.4 576C238.4 576 240.9 573.5 240.9 568.5L240.9 459.5L271.7 430.2L382.2 570.8C385.2 574.3 388.7 576.1 392.7 576.1L459.6 576.1C463.1 576.1 465.1 575.1 465.6 573.1L464.2 565.5z",
+      "color": "#00ffff",
+      "order": 4,
+      "published": true
+    },
+    {
+      "slug": "pandas",
+      "name": "Pandas",
+      "issuer": "Kaggle",
+      "link": "https://www.kaggle.com/learn/certification/hadiqasemian/pandas",
+      "iconPath": "M464.2 565.5L318.4 384.3L458.2 249C460.8 246.3 459.9 238.5 452.9 238.5L383.7 238.5C380.2 238.5 376.7 240.3 373.2 243.8L240.9 377.5L240.9 71.5C240.9 66.5 238.4 64 233.4 64L181.5 64C176.5 64 174 66.5 174 71.5L174 568.5C174 573.5 176.5 576 181.5 576L233.4 576C238.4 576 240.9 573.5 240.9 568.5L240.9 459.5L271.7 430.2L382.2 570.8C385.2 574.3 388.7 576.1 392.7 576.1L459.6 576.1C463.1 576.1 465.1 575.1 465.6 573.1L464.2 565.5z",
+      "color": "#00ffff",
+      "order": 5,
+      "published": true
+    },
+    {
+      "slug": "email-marketing",
+      "name": "Email Marketing",
+      "issuer": "Great Learning",
+      "link": "https://www.linkedin.com/posts/activity-7211823206205206528-Y5mu?utm_source=share&utm_medium=member_desktop",
+      "iconPath": "M444 383.8L430.8 383.8L430.8 418.5C406.3 441.6 374.5 454.3 340.9 454.3C267.7 454.3 208.5 394.1 208.5 319.9C208.5 245.8 267.7 185.5 340.9 185.5C376.2 185.5 409.5 199.5 434.5 224.9L496.8 161.6C455 119.3 399.7 96 340.7 96C218 96 120 196.6 120 320C120 442.5 217 544 340.7 544C403.9 544 465.2 517.8 511.7 461.5C509.7 433.9 498.3 383.8 444 383.8zM431.9 271.3L325.6 271.3L325.6 360.3L444 360.3C477.5 360.3 504.5 375.4 520 402.1L520 371.5C520 306.3 479.6 271.3 431.9 271.3z",
+      "color": "#ff6a00",
+      "order": 6,
+      "published": true
+    },
+    {
+      "slug": "chatgpt-for-seo-and-content",
+      "name": "ChatGPT for SEO and Content",
+      "issuer": "Great Learning",
+      "link": "https://www.linkedin.com/posts/activity-7211823206205206528-Y5mu?utm_source=share&utm_medium=member_desktop",
+      "iconPath": "M444 383.8L430.8 383.8L430.8 418.5C406.3 441.6 374.5 454.3 340.9 454.3C267.7 454.3 208.5 394.1 208.5 319.9C208.5 245.8 267.7 185.5 340.9 185.5C376.2 185.5 409.5 199.5 434.5 224.9L496.8 161.6C455 119.3 399.7 96 340.7 96C218 96 120 196.6 120 320C120 442.5 217 544 340.7 544C403.9 544 465.2 517.8 511.7 461.5C509.7 433.9 498.3 383.8 444 383.8zM431.9 271.3L325.6 271.3L325.6 360.3L444 360.3C477.5 360.3 504.5 375.4 520 402.1L520 371.5C520 306.3 479.6 271.3 431.9 271.3z",
+      "color": "#ff6a00",
+      "order": 7,
+      "published": true
+    }
+  ],
+  "projects": [
+    {
+      "slug": "todo-list-react",
+      "name": "Todo List +",
+      "image": "https://i.ibb.co/q3sfLyzb/todo-react-app.png",
+      "webLink": "https://hq-coding.github.io/todo-app/",
+      "githubLink": "https://github.com/HQ-Coding/todo-app",
+      "tags": [
+        "React"
+      ],
+      "badge": "1st 🥇",
+      "note": null,
+      "description": "",
+      "order": 1,
+      "published": true
+    },
+    {
+      "slug": "samurai-soda",
+      "name": "Samurai Soda",
+      "image": "https://i.ibb.co/m8bkkqs/Samurai-Soda.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/Project%20(Samurai-Soda)/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/Project%20(Samurai-Soda)",
+      "tags": [
+        "Web",
+        "Tailwind CSS"
+      ],
+      "badge": "1st 🥇",
+      "note": null,
+      "description": "",
+      "order": 2,
+      "published": true
+    },
+    {
+      "slug": "liquid-soul",
+      "name": "Liquid Soul",
+      "image": "https://i.ibb.co/Psz2DYc6/liquid-soul.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(Liquid-Soul)/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(Liquid-Soul)",
+      "tags": [
+        "GSAP",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 3,
+      "published": true
+    },
+    {
+      "slug": "urban",
+      "name": "Urban",
+      "image": "https://i.ibb.co/VJNR3Rn/9.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(Urban)/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(Urban)",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 4,
+      "published": true
+    },
+    {
+      "slug": "b-jewelry",
+      "name": "B-Jewelry",
+      "image": "https://i.ibb.co/BKQ1hz0/2.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(B-Jewerly)/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(B-Jewerly)",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 5,
+      "published": true
+    },
+    {
+      "slug": "music-player",
+      "name": "Music Player",
+      "image": "https://i.ibb.co/WzkRsP1/Music-Player-01.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/MusicPlayer/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/MusicPlayer",
+      "tags": [
+        "Swiper",
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 6,
+      "published": true
+    },
+    {
+      "slug": "exp-coding",
+      "name": "EXP Coding",
+      "image": "https://i.ibb.co/TM52PrQ/3.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(coding)/html/home.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(coding)",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 7,
+      "published": true
+    },
+    {
+      "slug": "takmakaron",
+      "name": "TakMakaron",
+      "image": "https://i.ibb.co/jVyRtkv/8.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(TakMakaron)/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(TakMakaron)",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": "Not responsive yet",
+      "description": "",
+      "order": 8,
+      "published": true
+    },
+    {
+      "slug": "todo-list-js",
+      "name": "Todo List",
+      "image": "https://i.ibb.co/FXV53Wg/20.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/TODO-LIST/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/TODO-LIST",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 9,
+      "published": true
+    },
+    {
+      "slug": "podcast-player",
+      "name": "Podcast Player",
+      "image": "https://i.ibb.co/2j10fNt/7.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(Podcast%20Player)/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(Podcast%20Player)",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 10,
+      "published": true
+    },
+    {
+      "slug": "nike",
+      "name": "Nike",
+      "image": "https://i.ibb.co/qW4H19b/6.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(Nike)/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(Nike)",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 11,
+      "published": true
+    },
+    {
+      "slug": "profile-card-3",
+      "name": "Profile Card 3",
+      "image": "https://i.ibb.co/4RYSybP/13.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(profile-card)/profile-card-01/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(profile-card)/profile-card-03",
+      "tags": [
+        "Card"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 12,
+      "published": true
+    },
+    {
+      "slug": "profile-card-1",
+      "name": "Profile Card 1",
+      "image": "https://i.ibb.co/R0vg4TR/11.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(profile-card)/profile-card-03/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(profile-card)/profile-card-01",
+      "tags": [
+        "Card"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 13,
+      "published": true
+    },
+    {
+      "slug": "bootstrap-full-website",
+      "name": "Bootstrap Full Website",
+      "image": "https://i.ibb.co/McdQNZ1/1.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/Bootstrap-Fullhomepage/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/Bootstrap-Fullhomepage",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 14,
+      "published": true
+    },
+    {
+      "slug": "database",
+      "name": "Database",
+      "image": "https://i.ibb.co/tbD3HsH/4.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(DATABASE)/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(DATABASE)",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 15,
+      "published": true
+    },
+    {
+      "slug": "profile-card-2",
+      "name": "Profile Card 2",
+      "image": "https://i.ibb.co/7Gb6JjW/12.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(profile-card)/profile-card-04/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(profile-card)/profile-card-02",
+      "tags": [
+        "Card"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 16,
+      "published": true
+    },
+    {
+      "slug": "food-menu",
+      "name": "Food Menu",
+      "image": "https://i.ibb.co/k38MRkd/5.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(FoodMenu)/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(FoodMenu)",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 17,
+      "published": true
+    },
+    {
+      "slug": "web3-design",
+      "name": "Web3 Design",
+      "image": "https://i.ibb.co/fr1qH9N/10.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/Project%20(Web3%20design)/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/Project%20(Web3%20design)",
+      "tags": [
+        "Web"
+      ],
+      "badge": null,
+      "note": "Not responsive yet",
+      "description": "",
+      "order": 18,
+      "published": true
+    },
+    {
+      "slug": "profile-card-4",
+      "name": "Profile Card 4",
+      "image": "https://i.ibb.co/nbNj6Xh/14.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/project%20(profile-card)/profile-card-02/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/project%20(profile-card)/profile-card-04",
+      "tags": [
+        "Card"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 19,
+      "published": true
+    },
+    {
+      "slug": "login-form-1",
+      "name": "Login Form 1",
+      "image": "https://i.ibb.co/BZnkzMz/15.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/login-form-1/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/login-form-1",
+      "tags": [
+        "Form"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 20,
+      "published": true
+    },
+    {
+      "slug": "login-form-2",
+      "name": "Login Form 2",
+      "image": "https://i.ibb.co/T1YjDhm/16.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/login-form-2/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/login-form-2",
+      "tags": [
+        "Form"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 21,
+      "published": true
+    },
+    {
+      "slug": "login-form-3",
+      "name": "Login Form 3",
+      "image": "https://i.ibb.co/3RDHPL9/17.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Web-Project/login-form-3/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Web-Project/login-form-3",
+      "tags": [
+        "Form"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 22,
+      "published": true
+    },
+    {
+      "slug": "pokemon-cards",
+      "name": "Pokemon Cards",
+      "image": "https://i.ibb.co/KNvv9fh/18.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/PokemonCards/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/PokemonCards",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 23,
+      "published": true
+    },
+    {
+      "slug": "cash-register",
+      "name": "Cash Register",
+      "image": "https://i.ibb.co/Brmp71P/19.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/Cash-Register-Project/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/Cash-Register-Project",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 24,
+      "published": true
+    },
+    {
+      "slug": "weather",
+      "name": "Weather",
+      "image": "https://i.ibb.co/DQhrvk5/29.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/Weather/html/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/Weather",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 25,
+      "published": true
+    },
+    {
+      "slug": "calculator",
+      "name": "Calculator",
+      "image": "https://i.ibb.co/Yh7QcxF/28.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/CALCULATOR/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/CALCULATOR",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 26,
+      "published": true
+    },
+    {
+      "slug": "mini-game",
+      "name": "Mini Game",
+      "image": "https://i.ibb.co/h8DM5bX/23.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/Mini-Game/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/Mini-Game",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 27,
+      "published": true
+    },
+    {
+      "slug": "calories-counter",
+      "name": "Calories Counter",
+      "image": "https://i.ibb.co/Lv67jTB/24.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/Calories-Counter/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/Calories-Counter",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 28,
+      "published": true
+    },
+    {
+      "slug": "music-player-fcc",
+      "name": "Music Player FCC",
+      "image": "https://i.ibb.co/41m0Rgv/21.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/Music-Player/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/Music-Player",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 29,
+      "published": true
+    },
+    {
+      "slug": "palindrome",
+      "name": "Palindrome",
+      "image": "https://i.ibb.co/5KqCYGV/22.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/Palindrome/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/Palindrome",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 30,
+      "published": true
+    },
+    {
+      "slug": "paper-rock-scissors",
+      "name": "Paper Rock Scissors",
+      "image": "https://i.ibb.co/2MK6sZ7/25.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/Paper-Rock-Scissors/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/Paper-Rock-Scissors",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 31,
+      "published": true
+    },
+    {
+      "slug": "roman-numeral-converter",
+      "name": "Roman Numeral Converter",
+      "image": "https://i.ibb.co/GptNSdx/26.png",
+      "webLink": "https://hq-coding.github.io/Frontend/Javascript/Roman-Numeral-Converter/index.html",
+      "githubLink": "https://github.com/HQ-Coding/Frontend/tree/main/Javascript/Roman-Numeral-Converter",
+      "tags": [
+        "JavaScript"
+      ],
+      "badge": null,
+      "note": null,
+      "description": "",
+      "order": 32,
+      "published": true
+    }
+  ]
+}
