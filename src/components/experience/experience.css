@@ -1,0 +1,82 @@
+@layer components {
+  .exp-section {
+    --exp-border: color-mix(in srgb, var(--fg) 45%, transparent);
+    --exp-muted: color-mix(in srgb, var(--fg) 60%, transparent);
+    --exp-track: color-mix(in srgb, var(--fg) 12%, transparent);
+  }
+
+  .exp-muted {
+    color: var(--exp-muted);
+  }
+
+  .exp-box {
+    border: 2px solid var(--exp-border);
+    border-radius: 0.375rem;
+  }
+
+  /* fade + slide up (old #experianceINFO / .show) */
+  .exp-reveal {
+    opacity: 0;
+    transform: translateY(20%);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  .exp-reveal[data-visible="true"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* skill bars (old .skillBar / .bar / .fill / .filled / .percent) */
+  .exp-skill {
+    width: clamp(150px, 30vw, 300px);
+    margin: 1rem auto;
+  }
+  .exp-bar {
+    position: relative;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--exp-track);
+  }
+  .exp-fill {
+    height: 100%;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+  }
+  .exp-fill[data-filled="true"] {
+    transform: scaleX(var(--value));
+    transition-delay: 0.5s;
+  }
+  .exp-percent {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--fg);
+  }
+
+  /* no animation: reduced-motion users, or JS disabled (content must not stay hidden) */
+  @media (prefers-reduced-motion: reduce) {
+    .exp-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .exp-fill {
+      transform: scaleX(var(--value));
+      transition: none;
+    }
+  }
+  @media (scripting: none) {
+    .exp-reveal {
+      opacity: 1;
+      transform: none;
+    }
+    .exp-fill {
+      transform: scaleX(var(--value));
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.hero-wrap { overflow-x: clip; }
+
+.hero-box {
+  position: relative;
+  transition: 1s;
+}
+
+.hero-info { transition: 1s; }
+.hero-greeting,
+.hero-name { transition: color 0.4s ease; }
+.hero-title {
+  color: var(--muted);
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  transform-origin: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.hero-img-bg { opacity: 1; z-index: 1; }
+.hero-img-nobg { opacity: 0; z-index: 0; }
+
+.hero-banner {
+  position: absolute;
+  width: max-content;
+  overflow: hidden;
+  font-size: clamp(40px, 6vw, 100px);
+  font-weight: bolder;
+  text-align: left;
+  color: transparent;
+  transition: 1s;
+}
+
+.hero-box:hover { box-shadow: inset 100vw 0 10px var(--accent); }
+.hero-box:hover .hero-title {
+  opacity: 0;
+}
+
+.hero-box:hover .hero-img-bg {
+  opacity: 0;
+  z-index: 1;
+  transform: scale(1.3) translateX(50%) translateY(10%);
+}
+.hero-box:hover .hero-img-nobg {
+  opacity: 1;
+  z-index: 2;
+  transform: scale(1.3) translateX(50%) translateY(10%);
+}
+
+.hero-box:hover .hero-info { transform: translateX(-180%); }
+.hero-box:hover .hero-greeting,
+.hero-box:hover .hero-name { color: var(--highlight); }
+
+.hero-box:hover .hero-banner {
+  color: var(--highlight);
+  transform: translateX(clamp(60%, 30vw, 90%));
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--fg);
+  border-radius: 9999px;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: clamp(0.7rem, 1vw, 1rem);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.hero-btn:hover { background: var(--fg); color: var(--bg); }
+
+@media (max-width: 760px) {
+  .hero-banner {
+    top: 15%;
+    left: 0;
+    font-size: 50px;
+    transform: translateX(0);
+  }
+  .hero-box:hover .hero-img-bg,
+  .hero-box:hover .hero-img-nobg { transform: scale(1) translateX(0) translateY(5%); }
+  .hero-box:hover .hero-info { transform: translateX(0); }
+  .hero-box:hover .hero-banner { transform: translateX(40%); }
+}
+@media (max-width: 550px) {
+  .hero-box:hover .hero-banner { transform: translateX(20%); }
+}
+@media (max-width: 450px) {
+  .hero-box:hover .hero-banner { transform: translateX(10%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-box, .hero-info, .hero-img, .hero-banner { transition: none; }
+}

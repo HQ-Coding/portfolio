@@ -1,0 +1,322 @@
+/*
+ * Certificates section.
+ * Uses only --fg, --bg and --accent from the theme; each card is tinted by its own
+ * brand colour (--cert) and a readable text colour (--cert-on) set from the component.
+ * Kept inside @layer components so Tailwind utilities can still override it.
+ */
+@layer components {
+  /* ---------- panel with parallax background ---------- */
+  .cert-stage {
+    --stage-radius: 1.5rem;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem  0rem 1rem;
+    border-radius: var(--stage-radius);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--fg) 18%, transparent);
+  }
+  .cert-stage > :not(.cert-bg) {
+    position: relative;
+    z-index: 1;
+  }
+  .cert-stage > header,
+  .cert-stage > div:not(.cert-bg) {
+    width: 100%;
+  }
+  .cert-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    /* clips the fixed image to the panel (the old "fixed-wrap" trick) */
+    clip-path: inset(0 round var(--stage-radius));
+    pointer-events: none;
+  }
+  .cert-bg-fixed {
+    position: fixed;
+    inset: 0;
+    transform: translateZ(0);
+  }
+  /* keeps text readable whatever the image looks like, in both themes */
+  .cert-bg-scrim {
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, var(--bg) 55%, transparent);
+  }
+
+  /* ---------- heading ---------- */
+  .cert-ribbon {
+    width: 3.5rem;
+    height: 3.9rem;
+    flex: none;
+    color: var(--accent);
+  }
+  .cert-rule {
+    height: 2px;
+    max-width: 16rem;
+    flex: 1;
+  }
+  .cert-rule-left {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, var(--accent) 80%, transparent));
+  }
+  .cert-rule-right {
+    background: linear-gradient(to left, transparent, color-mix(in srgb, var(--accent) 80%, transparent));
+  }
+  .cert-title-accent {
+    background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 50%, var(--fg)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .cert-subtitle {
+    color: color-mix(in srgb, var(--fg) 60%, transparent);
+    font-size: 1rem;
+  }
+
+  /* ---------- slider ---------- */
+  .cert-scroller {
+    --gap: 1.25rem;
+    --per-view: 1;
+    display: flex;
+    gap: var(--gap);
+    padding: 1.5rem 0.25rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.25rem;
+    scrollbar-width: none;
+  }
+  .cert-scroller::-webkit-scrollbar {
+    display: none;
+  }
+  .cert-scroller:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  @media (min-width: 640px) {
+    .cert-scroller {
+      --per-view: 2;
+    }
+  }
+  @media (min-width: 1024px) {
+    .cert-scroller {
+      --per-view: 3;
+    }
+  }
+  @media (min-width: 1280px) {
+    .cert-scroller {
+      --per-view: 4;
+    }
+  }
+  .cert-item {
+    flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+    scroll-snap-align: start;
+  }
+
+  /* dots */
+  .cert-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cert-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 9999px;
+    background: color-mix(in srgb, var(--fg) 25%, transparent);
+    transition: width 0.3s, background-color 0.3s;
+  }
+  .cert-dot:hover {
+    background: color-mix(in srgb, var(--fg) 50%, transparent);
+  }
+  .cert-dot[aria-current="true"] {
+    width: 1.6rem;
+    background: var(--fg);
+  }
+  .cert-dot:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
+  }
+
+  /* Prev / Next arrows nudge toward their direction (buttons use .glass-btn) */
+  .cert-prev:hover svg {
+    transform: translateX(-3px);
+  }
+  .cert-next:hover svg {
+    transform: translateX(3px);
+  }
+
+  /* ---------- card ---------- */
+  .cert-card {
+    /* light theme: brand colour as is for shapes, darkened for text */
+    --cert-ink: var(--cert);
+    --cert-text: color-mix(in srgb, var(--cert) 65%, #000);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 1.5rem;
+    border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+    border-radius: 1.25rem;
+    background: linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--bg) 72%, transparent),
+      color-mix(in srgb, var(--bg) 58%, transparent)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  }
+  /* dark theme: brand colours like navy would vanish, so lighten them */
+  :root[data-theme="dark"] .cert-card {
+    --cert-ink: color-mix(in srgb, var(--cert) 55%, #fff);
+    --cert-text: color-mix(in srgb, var(--cert) 55%, #fff);
+  }
+
+  /* soft brand-coloured glow in the top-right corner + concentric rings */
+  .cert-glow {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(
+      120% 70% at 100% 0%,
+      color-mix(in srgb, var(--cert-ink) 30%, transparent),
+      transparent 62%
+    );
+    pointer-events: none;
+  }
+  .cert-decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 55%;
+    color: var(--cert-ink);
+    pointer-events: none;
+  }
+
+  .cert-logo {
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    border-radius: 0.8rem;
+    background: var(--cert);
+    box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--cert) 70%, transparent);
+  }
+  .cert-logo svg {
+    width: 58%;
+    fill: var(--cert-on);
+  }
+
+  .cert-issuer {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .cert-name {
+    flex: 1;
+    margin-top: 0.75rem;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: color-mix(in srgb, var(--fg) 80%, transparent);
+  }
+
+  .cert-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid color-mix(in srgb, var(--fg) 15%, transparent);
+    font-size: 0.85rem;
+    color: color-mix(in srgb, var(--fg) 70%, transparent);
+  }
+  .cert-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .cert-meta-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex: none;
+    opacity: 0.8;
+  }
+  .cert-meta-year {
+    padding-left: 1rem;
+    border-left: 1px solid color-mix(in srgb, var(--fg) 15%, transparent);
+  }
+
+  /* "View Certificate" pill; its ::after stretches over the whole card, so the card is the click target */
+  .cert-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--cert-ink);
+    border-radius: 9999px;
+    color: var(--cert-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .cert-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  .cert-link-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    flex: none;
+    transition: transform 0.3s;
+  }
+  .cert-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .cert-card:hover,
+  .cert-card:has(.cert-link:focus-visible) {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--cert-ink) 60%, transparent);
+    box-shadow: 0 18px 40px -18px color-mix(in srgb, var(--cert-ink) 60%, transparent);
+  }
+  .cert-card:hover .cert-link,
+  .cert-card:has(.cert-link:focus-visible) .cert-link {
+    background: var(--cert);
+    border-color: var(--cert);
+    color: var(--cert-on);
+  }
+  .cert-card:hover .cert-link-icon {
+    transform: translate(2px, -2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cert-bg-fixed {
+      position: absolute; /* image scrolls with the panel: no parallax */
+    }
+    .cert-card,
+    .cert-link,
+    .cert-link-icon,
+    .cert-dot {
+      transition: none;
+    }
+    .cert-card:hover,
+    .cert-card:has(.cert-link:focus-visible),
+    .cert-card:hover .cert-link-icon,
+    .cert-prev:hover svg,
+    .cert-next:hover svg {
+      transform: none;
+    }
+  }
+}
