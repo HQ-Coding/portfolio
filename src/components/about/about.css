@@ -1,0 +1,208 @@
+/* The old site had "* { box-sizing: border-box }". Without it the padding and
+   border make the cards wider than their container. */
+#about,
+#about *,
+#about *::before,
+#about *::after {
+  box-sizing: border-box;
+}
+#about h2,
+#about h3,
+#about p {
+  margin: 0;
+}
+
+/* <section id="aboutME" class="relative container mb-20 py-20 px-6 max-w-7xl mx-auto
+        grid grid-cols-1 md:grid-cols-3 gap-6 items-center"> */
+#about {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto 5rem;
+  padding: 5rem 1.5rem;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  #about { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* <img id="aboutmeIMG" class="sm:w-auto md:col-span-1 rounded-full"> */
+#aboutmeIMG {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 9999px;
+}
+
+/* <div class="md:col-span-2 px-5"> */
+#about .about-content {
+  min-width: 0;
+  padding: 0 1.25rem;
+}
+@media (min-width: 768px) {
+  #about .about-content { grid-column: span 2 / span 2; }
+}
+
+/* <div id="aboutMeINFO" class="flex flex-col sm:flex-row gap-5 mb-4 w-full"> */
+#aboutMeINFO {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media (min-width: 640px) {
+  #aboutMeINFO { flex-direction: row; }
+}
+
+/* <div id="experianceINFO" class="border-2 border-custom rounded-md sm:w-1/2 w-full p-8">
+   and style.scss: #experianceINFO, #educationINFO { ... } */
+#experianceINFO,
+#educationINFO {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: fit-content;
+  padding: 2rem;
+  border: 2px solid var(--fg, currentColor);
+  border-radius: 0.375rem;
+
+  transition: 0.5s;
+  transform: translateY(20%);
+  opacity: 0;
+}
+#experianceINFO.is-shown,
+#educationINFO.is-shown {            /* old class name: .show */
+  transform: translateY(0%);
+  opacity: 1;
+}
+@media (min-width: 640px) {
+  #experianceINFO,
+  #educationINFO { width: 50%; }
+}
+
+/* <div class="icon"><svg class="sm:w-1/5 w-2/5 mx-auto mb-2"> */
+#about .about-icon svg {
+  display: block;
+  width: 40%;
+  margin: 0 auto 0.5rem;
+  fill: var(--fg, currentColor);
+}
+@media (min-width: 640px) {
+  #about .about-icon svg { width: 20%; }
+}
+
+/* <p class="font-bold sm:text-lg md:text-xl lg:text-2xl">Experience</p> */
+#about .about-card-title {
+  font-size: clamp(12px, 1vw, 24px);
+  font-weight: 700;
+}
+@media (min-width: 640px)  { #about .about-card-title { font-size: 1.125rem; line-height: 1.75rem; } }
+@media (min-width: 768px)  { #about .about-card-title { font-size: 1.25rem;  line-height: 1.75rem; } }
+@media (min-width: 1024px) { #about .about-card-title { font-size: 1.5rem;   line-height: 2rem; } }
+
+/* <p class='pLightGray'> and the global  p { font-size: clamp(12px,1vw,24px) } */
+#about .pLightGray {
+  font-size: clamp(12px, 1vw, 24px);
+  color: var(--muted, #666);
+}
+
+/* .catHover (cat peeking over the Experience card) */
+#about .catHover {
+  display: block;                    /* overrides the "hidden" attribute once this CSS has loaded */
+  position: absolute;
+  top: -50px;
+  right: -20px;
+  width: 50px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  transform: translateX(-50%) rotate(180deg);
+  transition: 1s ease;
+  pointer-events: none;
+}
+#experianceINFO:hover .catHover { top: 0; }
+
+/* <h3 class="text-xl font-bold mb-2">ABOUT ME</h3> */
+#about .about-heading {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+/* <p class="aboutMeText"> */
+#about .aboutMeText {
+  font-size: clamp(12px, 1vw, 24px);
+}
+#about .aboutMeText .untyped { color: transparent; }  /* letters not typed yet */
+
+/* ---- .catBox / .catReading / .catTextBox (the fixed cat on the right) ----
+   The old rule  transform: translateY(-50%) ,translateX(100%)  was invalid CSS,
+   so the box never got centered: its top edge sits at the middle of the screen.
+   Kept like that so it looks the same as your old site. */
+#about .catBox {
+  display: block;                    /* overrides the "hidden" attribute once this CSS has loaded */
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 40;                       /* below the navbar (50) and the mobile menu (60/70) */
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+}
+
+#about .catTextBox {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  z-index: 999;
+  width: max-content;
+  padding: 10px 20px;
+  border: solid 1px black;
+  border-radius: 30px 0 30px 30px;
+  background-color: rgb(255, 255, 255);
+  color: #000;                       /* bubble is always white, so the text is always dark */
+  font-size: clamp(12px, 2vw, 20px);
+  transition: 0.6s ease;
+  transition-delay: 0.3s;
+  transform: translateX(30%);
+  opacity: 0;
+}
+#about .catBox.is-active .catTextBox {   /* old class name: .fixed */
+  opacity: 1;
+  transform: translateX(-40%);
+  transition-delay: 0s;
+}
+
+#about .catReading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(70px, 10vw, 100px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  transition: 0.6s ease;
+  transform: translateX(20%);
+  opacity: 0;
+}
+#about .catBox.is-active .catReading {
+  transform: translateX(-20%);
+  opacity: 1;
+}
+
+/* ---- Accessibility / fallbacks ---- */
+@media (prefers-reduced-motion: reduce) {
+  #experianceINFO, #educationINFO,
+  #about .catHover, #about .catReading, #about .catTextBox { transition: none; }
+  #experianceINFO, #educationINFO { transform: none; opacity: 1; }
+}
+/* Visitors without JavaScript see everything straight away. */
+@media (scripting: none) {
+  #experianceINFO, #educationINFO { transform: none; opacity: 1; }
+  #about .aboutMeText .untyped { color: inherit; }
+}

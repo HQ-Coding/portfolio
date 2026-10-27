@@ -1,0 +1,20 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 0.6rem;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.button:hover { background: var(--surface); }
+.button:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+
+/* Light mode shows the moon (click -> dark). Dark mode shows the sun (click -> light). */
+.sun { display: none; }
+:global(:root[data-theme="dark"]) .moon { display: none; }
+:global(:root[data-theme="dark"]) .sun { display: block; }

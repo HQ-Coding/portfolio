@@ -1,26 +1,229 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --font-sans: var(--font-orbitron);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+/* ================= Glass glow button (rectangular) ================= */
+:root { --glow: 52, 142, 150; }
+:root[data-theme="dark"] { --glow: 94, 200, 210; }
+
+/* رنگ‌های اختصاصی (اختیاری): کلاس را کنار glass-btn بگذار */
+.glow-teal   { --glow: 52, 142, 150; }
+.glow-silver { --glow: 150, 165, 180; }
+.glow-mauve  { --glow: 188, 108, 148; }
+.glow-red    { --glow: 136, 7, 9; }
+
+.glass-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  border: 0;
+  border-radius: 0.9rem;
+  color: var(--fg);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--glow), 0.1) 0%,
+    rgba(var(--glow), 0.04) 50%,
+    rgba(var(--glow), 0.22) 100%
+  );
+  box-shadow:
+    inset 0 0 18px 1px rgba(var(--glow), 0.3),
+    inset 0 0 6px 1px rgba(var(--glow), 0.55),
+    0 0 22px 0 rgba(var(--glow), 0.2);
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    letter-spacing 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* لایه‌ی براقی شیشه */
+.glass-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    transparent 45%,
+    rgba(0, 0, 0, 0.22) 100%
+  );
+  box-shadow: inset 1px 2px 4px rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* نوار نور (شیمر) */
+.glass-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+
+.glass-btn:hover,
+.glass-btn:focus-visible {
+  transform: translateY(-2px) scale(1.04);
+  letter-spacing: 0.08em;
+  box-shadow:
+    inset 0 0 26px 3px rgba(var(--glow), 0.45),
+    inset 0 0 10px 2px rgba(var(--glow), 0.7),
+    0 0 40px 6px rgba(var(--glow), 0.35);
+}
+
+.glass-btn:hover::after,
+.glass-btn:focus-visible::after {
+  animation: glass-shimmer 0.8s ease-out forwards;
+}
+
+.glass-btn:active {
+  transform: translateY(0) scale(0.95);
+  box-shadow:
+    inset 0 0 30px 4px rgba(var(--glow), 0.8),
+    inset 0 0 12px 3px rgba(255, 255, 255, 0.55),
+    0 0 24px 4px rgba(var(--glow), 0.4);
+}
+
+.glass-btn:focus-visible {
+  outline: 2px solid rgb(var(--glow));
+  outline-offset: 3px;
+}
+
+/* آیکن داخل دکمه */
+.glass-btn svg {
+  width: 1.15em;
+  height: 1.15em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* فلش: موقع hover به جلو می‌پرد */
+.glass-btn:hover .icon-arrow { animation: glass-arrow 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+/* آیکن +: موقع hover می‌چرخد */
+.glass-btn:hover .icon-spin { transform: rotate(180deg) scale(1.15); }
+
+/* ورود با انیمیشن (اختیاری): کلاس glass-in را اضافه کن */
+.glass-in {
+  opacity: 0;
+  animation: glass-float-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes glass-shimmer {
+  from { left: -150%; }
+  to { left: 200%; }
+}
+@keyframes glass-arrow {
+  0%   { transform: translate(0, 0); opacity: 1; }
+  40%  { transform: translate(14px, -14px); opacity: 0; }
+  41%  { transform: translate(-14px, 14px); opacity: 0; }
+  100% { transform: translate(0, 0); opacity: 1; }
+}
+@keyframes glass-float-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.92); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-btn,
+  .glass-btn:hover,
+  .glass-btn:active { transition: none; transform: none; letter-spacing: 0.04em; }
+  .glass-btn:hover::after,
+  .glass-btn:focus-visible::after,
+  .glass-btn:hover .icon-arrow { animation: none; }
+  .glass-in { animation: none; opacity: 1; }
+}
+
+/* ================= Fold button (accent) ================= */
+:root { --fold-text: #f5f5f5; }
+:root[data-theme="dark"] { --fold-text: #111111; }
+
+.fold-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 1.4em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  color: var(--fold-text);
+  background-color: var(--accent);
+  box-shadow: 0.4em 0.4em 0.5em rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* گوشه‌ی تاشده */
+.fold-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 0 0 0.5em 0;
+  background: linear-gradient(
+    135deg,
+    var(--bg) 0%,
+    var(--bg) 50%,
+    color-mix(in srgb, var(--accent) 70%, black) 50%,
+    var(--accent) 60%
+  );
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.fold-btn:hover::before,
+.fold-btn:focus-visible::before {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.fold-btn:active {
+  box-shadow: 0.15em 0.15em 0.3em rgba(0, 0, 0, 0.3);
+  transform: translate(0.1em, 0.1em);
+}
+
+.fold-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fold-btn, .fold-btn::before { transition: none; }
 }

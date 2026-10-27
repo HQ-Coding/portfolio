@@ -1,3 +1,4 @@
+import { cacheLife, cacheTag } from "next/cache";
 import { getDb } from "./mongodb";
 import {
   certificateSchema,
@@ -15,6 +16,10 @@ import type { z } from "zod";
  *   - no unsafe type assertions,
  *   - unknown fields (including Mongo's ObjectId `_id`) are dropped,
  *   - the result is plain, serializable data that is safe to pass to client components.
+ *
+ * Caching: this project uses `cacheComponents`, so each function below uses
+ * "use cache". The result is kept for hours and can be refreshed instantly later with
+ * revalidateTag("profile" | "certificates" | "projects") from the admin panel.
  *
  * Do not import this file from a client component.
  */
@@ -60,6 +65,10 @@ function parseDocuments<S extends z.ZodType>(
 }
 
 export async function getProfile(): Promise<Profile> {
+  "use cache";
+  cacheLife("seconds");
+  cacheTag("profile");
+
   let raw: unknown;
   try {
     const db = await getDb();
@@ -93,6 +102,10 @@ export async function getProfile(): Promise<Profile> {
 }
 
 export async function getCertificates(): Promise<Certificate[]> {
+  "use cache";
+  cacheLife("seconds");
+  cacheTag("certificates");
+
   let docs: unknown[];
   try {
     const db = await getDb();
@@ -108,6 +121,10 @@ export async function getCertificates(): Promise<Certificate[]> {
 }
 
 export async function getProjects(): Promise<Project[]> {
+  "use cache";
+  cacheLife("seconds");
+  cacheTag("projects");
+
   let docs: unknown[];
   try {
     const db = await getDb();

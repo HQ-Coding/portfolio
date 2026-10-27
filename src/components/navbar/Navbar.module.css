@@ -1,0 +1,176 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  max-width: 72rem;
+  height: 4rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+/* ---------- Desktop ---------- */
+.desktop {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+.list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.link {
+  display: inline-block;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.5rem;
+  color: var(--fg);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.link:hover { background: var(--surface); }
+.contact {
+  margin-left: 0.5rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 0.8rem;
+  background: var(--pill);
+  color: var(--fg);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.contact:hover { background: var(--pill-hover); }
+
+.link:focus-visible,
+.contact:focus-visible,
+.logo:focus-visible,
+.iconButton:focus-visible,
+.drawerLink:focus-visible,
+.drawerContact:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+
+/* ---------- Mobile ---------- */
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 0.6rem;
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.iconButton:hover { background: var(--surface); }
+
+@media (min-width: 768px) {
+  .desktop { display: flex; }
+  .mobileActions { display: none; }
+}
+
+/* ---------- Drawer ---------- */
+/* "visibility: hidden" while closed keeps the hidden links out of keyboard Tab order. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--overlay);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+.overlayOpen {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70;
+  width: min(20rem, 85vw);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.75rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0s linear 0.3s;
+  overflow-y: auto;
+}
+.drawerOpen {
+  transform: none;
+  visibility: visible;
+  transition: transform 0.3s ease;
+}
+
+.drawerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3.5rem;
+}
+.drawerList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.drawerLink {
+  display: block;
+  padding: 0.85rem 0.75rem;
+  border-radius: 0.6rem;
+  font-size: 1.15rem;
+  color: var(--fg);
+  text-decoration: none;
+}
+.drawerLink:hover { background: var(--surface); }
+.drawerContact {
+  margin-top: auto;
+  padding: 0.9rem 1rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  background: var(--pill);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay, .overlayOpen, .drawer, .drawerOpen { transition: none; }
+}

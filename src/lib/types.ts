@@ -62,6 +62,7 @@ export const certificateSchema = z.object({
   color: z.string(), // hex color
   order: z.number(),
   published: z.boolean(),
+  year: z.string(),
 });
 
 export type Certificate = z.infer<typeof certificateSchema>;
